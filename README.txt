@@ -10,13 +10,13 @@ Twi is written by Jeremy Brand and utilizes Tijs Verkoyen's OAuth twitter_oauth 
 
 .deb packages were tested on the following OS:
 
-	- Debian GNU/Linux 4.0 (aka Lenny)
-	- Debian GNU/Linux 5.0 (aka Squeeze)
-	- Debian GNU/kFreeBSD 5.0 (aka Squeeze)
+	- Debian GNU/Linux 5.0 (aka Lenny)
+	- Debian GNU/Linux 6.0 (aka Squeeze)
+	- Debian GNU/kFreeBSD 6.0 (aka Squeeze)
 
 .deb packages should work pretty seamlessly on The following Ubuntu:
 
-	- Ubuntu greater than version 9.
+	- Ubuntu greater than or equal to version 10.
 
 
 	
