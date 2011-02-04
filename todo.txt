@@ -1,0 +1,7 @@
+TODO
+
+- convert non class procedures to class.
+- improve error handling.
+- extend simple features.
+- different auth types and/or no register application ?
+

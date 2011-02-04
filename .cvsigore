@@ -1,0 +1,8 @@
+*.deb
+.cvsignore
+.cvsigore
+.gitignore
+.hgignore
+.hgignore
+.svnignore
+.svnignore

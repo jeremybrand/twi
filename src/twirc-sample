@@ -1,0 +1,7 @@
+<?php
+// This file, modified with your keys, should live in your home directory as $HOME/.twirc
+define('TWI_CONSUMER_KEY', 'tS4lkjsdSDFlkj63298745');
+define('TWI_CONSUMER_SECRET', 'sPClsdflkj8756kjhksdfSETGdfkjh4#@$234kjhSD');
+define('TWI_OAUTH_TOKEN', '104387489-joesdf4502978LKJsdfjTSDFlkhsfdkjh32kjkhd');
+define('TWI_OAUTH_SECRET_TOKEN', '6zlksdjfl798435lkjsdf07gklsjhdf872345jhsdo');
+?>

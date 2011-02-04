@@ -1,0 +1,138 @@
+#!__TWI_PHP_PATH__
+<?php
+
+/*
+  This software can be used to communicate with Twitter (http://twitter.com)
+ 
+  If you find any bugs please help and report them. 
+  Reporting bugs and submitting patches can be done by sending
+  an email to jeremy@nirvani.net.
+
+  Copyright (c) 2011, Jeremy Brand. All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+
+  1. Redistributions of source code must retain the above copyright notice,
+  this list of conditions and the following disclaimer.
+
+  2. Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+  3. The name of the author may not be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  This software is provided by the author "as is" and any express or implied
+  warranties, including, but not limited to, the implied warranties of
+  merchantability and fitness for a particular purpose are disclaimed. In no
+  event shall the author be liable for any direct, indirect, incidental,
+  special, exemplary, or consequential damages (including, but not limited to,
+  procurement of substitute goods or services; loss of use, data, or profits;
+  or business interruption) however caused and on any theory of liability,
+  whether in contract, strict liability, or tort (including negligence or
+  otherwise) arising in any way out of the use of this software, even if
+  advised of the possibility of such damage.
+
+  @author Jeremy Brand <jeremy@nirvani.net>
+
+  @version 2.0.3
+
+  @copyright   Copyright (c) 2011, Jeremy Brand. All rights reserved.
+
+  @license BSD License
+
+ */
+
+
+function main() {
+
+    global $argv;
+
+    switch($argv[1]) {
+        case "":
+        case "--send": // Not actually used, just FYI (unles you want to)
+            echo "    Type your message and end your transmission with EOT character,\n";
+            echo "\n";
+            echo '    End your message with a newline then period (.) or CTRL-D.' . "\n";
+            echo "\n";
+            $x = get_stdin_special();
+            echo "(eot)\n";
+            $d = send_tweet($x);
+            $tid = $d['id'];
+            if ($tid > 0) {
+                $url = 'https://twitter.com/#!/' . $d['user']['id_str'] . '/status/' . $tid;
+                print "tweet: " . $url . "\n";
+                return(true);
+            } else {
+                return(false);
+            }
+        break;
+
+        case "-d":
+        case "--delete":
+            if (strlen($argv[2]) > 0)
+                return delete_tweet($argv[2]);
+            else
+                return help_delete();
+        break;
+
+        case "help_delete":
+        case "--help delete":
+        case "--help-delete":
+            return help_delete();
+        break;
+
+        case "help_send":
+        case "--help send":
+        case "--help-send":
+            return help_send();
+        break;
+
+        case "help":
+        case "-h":
+        default:
+            return help();
+        break;
+
+        case "test":
+            print get_stdin_special();
+        break;
+    }
+}
+
+function twirc_help() {
+    echo "\n";
+    echo '1) You must "Register an app" with your twitter account.' . "\n";
+    echo "   http://dev.twitter.com\n";
+    echo "\n";
+    echo "2) You must fill in your ~/.twirc with authentication from \n";
+    echo "   the application credentials created in step 1.\n";
+    echo "\n";
+
+    print "    Example format of ~/.twirc:\n";
+    print "\n";
+    print '<?php' . "\n";
+    print <<<EOT
+define('TWI_CONSUMER_KEY', 'tS5aLzlksdfSDgserrDFSF');
+define('TWI_CONSUMER_SECRET', 'sPCEsdsdfklkj345k6j3lkjsdfkljgsd879sgdsdfh');
+define('TWI_OAUTH_TOKEN', '934589736-joEugSfsklsGTHHJSDFKJHsdfkjhsdkjhfkj4333');
+define('TWI_OAUTH_SECRET_TOKEN', '6zlksdfsdf798435kljsDSDFSDFkjh4987634jkhsD');
+
+EOT;
+    print '?>' . "\n";
+
+    exit(1);
+
+}
+
+require_once('__TWI_PREFIX__/lib/twi/libtwi_cli.php');
+if (!file_exists($_ENV['HOME'].'/.twirc')) {
+    twirc_help();
+} else {
+    require_once($_ENV['HOME'].'/.twirc');
+}
+
+main();
+
+?>

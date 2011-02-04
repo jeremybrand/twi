@@ -1,0 +1,8 @@
+twi (1.0.2) unstable; urgency=low
+
+  * Release
+  * simple send interface.
+  * simple delete interface.
+  * requires twitter account to register an applicatin.
+
+ -- Jeremy Brand <jeremy@nirvani.net>  Fri, 04 Feb 2011 15:21:18 -0800
