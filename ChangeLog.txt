@@ -1,3 +1,7 @@
+twi (1.0.8) unstable; urgency=low
+
+  * normal .twirc broke when new .twirc-username feature was added. fixed.
+
 twi (1.0.7_dev) unstable; urgency=low
 
   * features
