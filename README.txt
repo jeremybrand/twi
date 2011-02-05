@@ -15,6 +15,8 @@ Bonus feature, scripting/cron output to twitter!
   different twitter accounts. Technically, this is not another feature, just
   another way to use it.
 
+- Yes, it is all over SSL.
+
 Goals
 
 - Keep features few but useful.
