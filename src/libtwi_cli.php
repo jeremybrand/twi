@@ -35,12 +35,8 @@
   
   @author Jeremy Brand <jeremy@nirvani.net> 
   
-  @version 2.0.3
-  
   @copyright   Copyright (c) 2011, Jeremy Brand. All rights reserved.
  
-  @license BSD License
-
  */
 
 

@@ -3,7 +3,6 @@
 # Overwrite this file in the ./src directory instead.
 #
 Package: twi
-Version: 1.0.3
 Copyright: copyright.txt
 Changelog: ChangeLog.txt
 Readme: README.txt
