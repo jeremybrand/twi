@@ -60,14 +60,15 @@ function main() {
 		}
 		# Continue into the "" case...
         case "":
-            echo "    Type your message and end your transmission with EOT character,\n";
-            echo "\n";
-            echo '    End your message with a newline then period (.) or CTRL-D.' . "\n";
             if ( (strlen($twitter_user) > 0) && !file_exists($rcfile) ) {
 		twirc_help();
             } else if (file_exists($rcfile)) {
                 echo "    Account: $twitter_user\n";
+		echo "\n";
             } 
+            echo "    Type your message and end your transmission with EOT character,\n";
+            echo "\n";
+            echo '    End your message with a newline then period (.) or CTRL-D.' . "\n";
 
             echo "\n";
             $x = get_stdin_special();
@@ -119,9 +120,51 @@ function twirc_help() {
     echo "\n";
     echo '1) You must "Register an app" with your twitter account.' . "\n";
     echo "   http://dev.twitter.com\n";
-    echo "\n";
-    echo "2) You must fill in your ~/.twirc with authentication from \n";
-    echo "   the application credentials created in step 1.\n";
+
+    print <<<EOT
+
+You must "Register an app" with your twitter account to use twi.
+
+Instructions for "Registering an application" with your twitter account:
+
+a. Log into http://dev.twitter.com
+
+b. Click on (2) Register an app
+
+	Use these settings:
+
+	APPLICATION NAME: [Whatever you want]
+	DESCRIPTION: twi
+	APPLICATION WEBSITE: http://github.com/jeremybrand/twi
+	ORGAINIZATION: [Whatever you want]
+	APPLICATION TYPE: [*] Client 
+	DEFAULT ACCESS TYPE: [*] Read & Write
+	APPLICATION ICON: [Whatever you want]
+
+	Click: REGISTER APPLICATION
+
+c. In a terminal window, copy the twirc-sample file to your home directory
+
+   $ cp /usr/share/doc/twi/twirc.sample $HOME/.twirc
+
+d. Modify $HOME/.twirc with your credentials.
+
+   Your [application name Settions] page will have:
+   Consumer Key (on "Settings" page)
+   Consumer Secret (on "Settiongs" page)
+   OAuth Token  (on "my access token" page)
+   OAuth Token Secret (on "my access token" page)
+
+e. Save the .twirc file.
+
+f. tweet away using twi, eg:
+
+    $ twi
+       or for help
+    $ twi -h
+
+EOT;
+
     echo "\n";
 
     print "    Example format of ~/.twirc:\n";
@@ -135,6 +178,10 @@ define('TWI_OAUTH_SECRET_TOKEN', '6zlksdfsdf798435kljsDSDFSDFkjh4987634jkhsD');
 
 EOT;
     print '?>' . "\n";
+
+
+
+
 
     exit(1);
 

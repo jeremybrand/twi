@@ -123,6 +123,13 @@ function help_send() {
 
 }
 
+function create_blank_twirc() {
+
+    # placeholder
+    true;
+
+}
+
 function send_tweet($msg=null) {
 
         if ($msg == null) {
