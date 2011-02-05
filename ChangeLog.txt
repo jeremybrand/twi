@@ -1,3 +1,7 @@
+twi (1.0.4) unstable; urgency=low
+
+  * multiple twitter accounts
+
 twi (1.0.3) unstable; urgency=low
 
   * documentation fixes

@@ -1,4 +1,4 @@
-#!__TWI_PHP_PATH__
+#!/usr/bin/php
 <?php
 
 /*
@@ -140,7 +140,7 @@ EOT;
 
 }
 
-require_once('__TWI_PREFIX__/lib/twi/libtwi_cli.php');
+require_once('/usr/lib/twi/libtwi_cli.php');
 
 if (!file_exists($_ENV['HOME'].'/.twirc'.$twirc_extra)) {
     twirc_help();
