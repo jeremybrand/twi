@@ -1,9 +1,9 @@
 
 Command line TWitter Interface (aka. twi)
 
-twi (aka. TWitter Interface) is single twitter user, multi-unix user, twitter command line client
-meant to be simple to use and send updates quickly. The only additional feature at this time
-is deleting a tweet.
+twi (aka. TWitter Interface) is a twitter command line client meant to be
+simple to use and send updates quickly from the unix command line. The only
+additional feature at this time is deleting a tweet.
 
 Twi is written by Jeremy Brand and utilizes Tijs Verkoyen's OAuth twitter_oauth class.
 

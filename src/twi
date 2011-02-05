@@ -47,18 +47,12 @@
 
 function main() {
 
-    global $argv;
+    global $argv, $rcfile, $twitter_user;
 
     switch($argv[1]) {
 
 	case "-u":
 	case "--user":
-		if (strlen(trim($argv[2])) > 0) {
-			$twitter_user=$argv[2];	
-			$twirc_extra="-${twitter_user}";
-			$rcfile=$_ENV['HOME'].'/.twirc'.$twirc_extra;
-		}
-		# Continue into the "" case...
         case "":
             if ( (strlen($twitter_user) > 0) && !file_exists($rcfile) ) {
 		twirc_help();
@@ -187,12 +181,26 @@ EOT;
 
 }
 
-require_once('__TWI_PREFIX__/lib/twi/libtwi_cli.php');
+switch($argv[1]) {
 
-if (!file_exists($_ENV['HOME'].'/.twirc'.$twirc_extra)) {
+        case "-u":
+        case "--user":
+                if (strlen(trim($argv[2])) > 0) {
+                        $twitter_user=$argv[2];
+                        $twirc_extra="-${twitter_user}";
+                        $rcfile=$_ENV['HOME'].'/.twirc'.$twirc_extra;
+                }
+	break;
+	default:
+		true;
+	break;
+}
+
+require_once('__TWI_PREFIX__/lib/twi/libtwi_cli.php');
+if (!file_exists($rcfile)) {
     twirc_help();
 } else {
-    require_once($_ENV['HOME'].'/.twirc'.$twirc_extra);
+    require_once($rcfile);
 }
 
 main();
