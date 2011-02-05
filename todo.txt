@@ -6,4 +6,5 @@ TODO
 - different auth types and/or no register application ?
 - Add --version
 - multi-language
+- direct messaging
 
