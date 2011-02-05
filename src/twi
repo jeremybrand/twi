@@ -143,9 +143,9 @@ b. Click on (2) Register an app
 
 	Click: REGISTER APPLICATION
 
-c. In a terminal window, copy the twirc-sample file to your home directory
+c. In a terminal window, copy the twirc-sample.txt file to your home directory
 
-   $ cp /usr/share/doc/twi/twirc.sample $HOME/.twirc
+   $ cp __TWI_PREFIX__/share/doc/twi/twirc-sample.txt $HOME/.twirc
 
 d. Modify $HOME/.twirc with your credentials.
 
