@@ -5,4 +5,5 @@ TODO
 - extend simple features.
 - different auth types and/or no register application ?
 - Add --version
+- multi-language
 
