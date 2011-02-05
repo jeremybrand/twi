@@ -6,3 +6,5 @@
 .hgignore
 .svnignore
 .svnignore
+build/*
+debian/control
