@@ -1,3 +1,7 @@
+twi (1.0.6) unstable; urgency=low
+
+  * use proper variable replacement in documentation too.
+
 twi (1.0.5) unstable; urgency=low
 
   * help with setting up twitter keys.
