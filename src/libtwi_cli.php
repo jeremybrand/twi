@@ -50,20 +50,14 @@ function help() {
         global $argv;
         
         echo "\n";
-        echo "    Default Usage (sends tweet):\n";
+        echo "  - Default Usage, no arguments (sends tweet):\n";
         echo '    $ ' . $argv[0] . "\n";
         echo "    Type your message and end your transmission with single period (.)\n";
         echo "\n";
-        echo "\n";
-        echo "  --help or -h\n";
-        echo "    show this help\n";
-        echo "\n";
-        echo "  -No options (default)\n";
-        echo "    No options sends a tweet\n";
-
         echo "  -d or --delete\n";
         echo "    Deletes a previously tweeted tweet by id from the history.\n";
         echo "    Does not un-send SMSs or tweets that have been delivered.\n";
+        echo "\n";
         echo "\n";
         echo "    Help Delete Usage:\n";
         echo '    $ ' . $argv[0] . " --help-delete\n";
@@ -71,7 +65,10 @@ function help() {
         echo "    Help Send Usage: \n";
         echo '    $ ' . $argv[0] . " --help-send\n";
         echo "\n";
+        echo "  --help or -h\n";
+        echo "    show this help\n";
         echo "\n";
+ 
 
 }
 
