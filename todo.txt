@@ -1,5 +1,7 @@
 TODO
 
+- multi-message append note (eg. for hash tags to add)
+- optionally, make timestamp a hashtag.
 - convert non class procedures to class.
 - improve error handling.
 - extend simple features.
